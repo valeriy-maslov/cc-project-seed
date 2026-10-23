@@ -17,7 +17,13 @@ Requirements:
 
 The main session bootstraps itself, without any features or gates:
 1. Ask the human up to 10 questions using AskUserQuestion: project name, users of the project, what we ship (in general, not architecture, e.g. service, web, mobile, library, can be multiple), single package or monorepo, stack preferences.
-2. If the stack is unclear - initiate a spike research in `.knaifu/work/spikes/bootstrap/<question>/`, one question per spike. Make sure the decisions are recorded into Obsidian Vault `.knaifu/knowledge`, the hooks must pick this up automatically.
-3. Create `README.md` using the information received from the human.
+2. Remove `.knaifu` from `.gitignore`.
+3. Create new Obsidian Vault in `.knaifu`, the vault will also include these structure elements:
+  1. decisions
+  2. project knowledge and documentation
+  3. project state
+4. If the stack is unclear - initiate a spike research in `.knaifu/work/spikes/bootstrap/<question>/`, one question per spike. Make sure the decisions are recorded into Obsidian Vault `.knaifu/knowledge`, the hooks must pick this up automatically.
+5. Create `README.md` using the information received from the human.
+6. Commit the changes.
 
 After all these things are completed, tell the human that `BOOTSTRAP DONE` can be used to finish this. Before doing so, the human may ask to do something else. Evaluate the human's request if that is a part of the bootstrap or not. Think if it is related to the product features or changes. If it's not related to bootstrap then refuse doing what the human wants until `BOOTSTRAP DONE` is called.
